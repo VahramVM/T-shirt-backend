@@ -6,7 +6,7 @@ module.exports.getByName = async function (req, res) {
     try {
 
         if (req.query.name === '') {
-            const categories = await Category.find()
+            const categories = await Category.find() // {name : 'imgg'}
             res.status(200).json(categories)
         } else {
             const categories = await Category.find({ name: req.query.name })

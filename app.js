@@ -25,8 +25,8 @@ app.use(morgan('dev'));
 
 
 
-app.use(bodyParser.json({ limit: '5mb' }));
-app.use(bodyParser.urlencoded({ limit: '5mb', extended: true }))
+app.use(bodyParser.json({ limit: '15mb' }));
+app.use(bodyParser.urlencoded({ limit: '15mb', extended: true }))
 app.use(require('morgan')('dev'))
 app.use(require('cors')())
 // app.use(bodyParser.urlencoded({extended:true}));
@@ -114,7 +114,7 @@ function sendMail(image) {
         // requireTLS: true,
         auth: {
             user: 'vahram.keleshyan@gmail.com',
-            pass: '!!120485ga'
+            pass: 'lijgekdchpjuhovz'
         },
         tls: {
             rejectUnauthorized: false
