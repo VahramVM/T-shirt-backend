@@ -10,6 +10,7 @@ const productscolorRoutes = require('./routes/productscolor');
 const fontRotes = require('./routes/fonts');
 const keys = require('./config/keys');
 const app = express();
+const path = require('path')
 const cors = require('cors');
 const morgan = require('morgan');
 
@@ -39,6 +40,14 @@ app.use('/api/product', productRoutes);
 app.use('/api/productcolor', productscolorRoutes);
 app.use('/api/font', fontRotes);
 app.use('/api/analytics', analyticsRotes);
+
+if (process.env.NODE_ENV === 'production') {
+    app.use('/', express.static(path.join(__dirname, 'client', 'dist', 'client')))
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'dist', 'client', 'index.html'))
+    })
+}
 
 // app.use('/api/mail', analyticsRotes)
 
