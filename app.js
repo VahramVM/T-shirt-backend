@@ -41,7 +41,7 @@ app.use('/api/productcolor', productscolorRoutes);
 app.use('/api/font', fontRotes);
 app.use('/api/analytics', analyticsRotes);
 
-if (process.env.NODE_ENV === 'production') {
+if (true) {
     app.use('/', express.static(path.join(__dirname, '../t-shirt-frontend', 'dist', 'client')))
 
     app.get('*', (req, res) => {
