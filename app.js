@@ -41,13 +41,13 @@ app.use('/api/productcolor', productscolorRoutes);
 app.use('/api/font', fontRotes);
 app.use('/api/analytics', analyticsRotes);
 
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
     app.use('/', express.static(path.join(__dirname, '../t-shirt-frontend', 'dist', 'client')))
 
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, '../t-shirt-frontend', 'dist', 'client', 'index.html'))
     })
-}
+// }
 
 // app.use('/api/mail', analyticsRotes)
 
