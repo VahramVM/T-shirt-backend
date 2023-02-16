@@ -42,10 +42,10 @@ app.use('/api/font', fontRotes);
 app.use('/api/analytics', analyticsRotes);
 
 // if (process.env.NODE_ENV === 'production') {
-    app.use('/static', express.static(path.join(__dirname,  '../t-shirt-frontend', 'dist', 'client')))
+    app.use('/', express.static(path.join(__dirname,  '../t-shirt-frontend', 'dist', 'client')))
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../t-shirt-frontend', 'dist', 'client', 'index.html'))
+        res.sendFile(path.resolve(__dirname, 't-shirt-frontend', 'dist', 'client', 'index.html'))
     })
 // }
 
