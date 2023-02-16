@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": " NODE_ENV=production nodemon node index.js",
+    "start": " cross-env NODE_ENV=production nodemon node index.js",
     "t-shirt-frontend": "npm run start --prefix ../t-shirt-frontend",
     "t-shirt-frontend:install": "npm install --prefix ../t-shirt-frontend",
     "t-shirt-frontend:build": "npm run build --prefix ../t-shirt-frontend",
-    "dev": " NODE_ENV=development concurrently \"npm run start\" \"npm run t-shirt-frontend\""
+    "dev": " cross-env NODE_ENV=development concurrently \"npm run start\" \"npm run t-shirt-frontend\""
   },
   "author": "",
   "license": "ISC",
