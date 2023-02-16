@@ -1,6 +1,5 @@
 node_modules
-
 config/keys.dev.js
-
 config/keys.prod.js
+client/etc
 
